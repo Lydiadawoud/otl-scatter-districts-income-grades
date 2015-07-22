@@ -1,0 +1,70 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Google Visualization ScatterChart Series by JackDougherty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // Load the Google Visualization API and chart package
+      google.load('visualization', '1', {packages: ['corechart']});
+      // Set a callback to run when the Visualization API is loaded.
+      google.setOnLoadCallback(drawVisualization);
+    var chart;
+    var data;
+
+    function drawVisualization() {
+      // To see the data that this visualization uses, browse to
+      // https://docs.google.com/spreadsheet/ccc?key=0AtmGKybdRLlZdHBvSGxIdEJoc1YxNUxtTThGbU9Qcnc
+      // In your Google Sheet, copy only the key from the URL (the portion immediately after "key=") and paste in below
+      // Adjust the cell range (e.g. A1:G7) to match data in your Google Sheet
+      // In your Google Sheet, File > Publish to the Web
+      var query = new google.visualization.Query(
+          'http://spreadsheets.google.com/tq?key=0AtmGKybdRLlZdHBvSGxIdEJoc1YxNUxtTThGbU9Qcnc&range=A1:G7&pub=1');
+    
+      // Send the query with a callback function.
+      query.send(handleQueryResponse);
+    }
+    
+    function handleQueryResponse(response) {
+      if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+      // Set data series (3 in this sample) to match your Google Sheet. 
+      // Set property for each tooltip column in your GoogleSheet (first = 0)
+      var data = response.getDataTable();
+      data.setColumnProperty(2, 'role', 'tooltip');
+      data.setColumnProperty(4, 'role', 'tooltip');
+      data.setColumnProperty(6, 'role', 'tooltip');
+      chart = new google.visualization.ScatterChart(document.getElementById('chart'));
+      // Insert titles, labels, font sizes, and legend/data series colors below.
+      // If Google Sheet data is not in decimal or percent format (between 0 and 1), reset maxValue and remove format. 
+      // Modify legend labels via Y-series column headers in Google Sheet.
+      // See more ScatterChart options at 
+      // https://developers.google.com/chart/interactive/docs/gallery/scatterchart
+      var options = {title: 'click points or float over cursor to view data labels', 
+          titleTextStyle: {fontSize: 14, italic: true},
+          vAxis: {title: "Insert Y-axis label", titleTextStyle: {fontSize: 14}, minValue: 0, maxValue: 1, format:'#,###%', gridlines: {count:3}},
+          hAxis: {title: "Insert X-axis label", titleTextStyle: {fontSize: 14}, minValue: 0, maxValue: 1, format:'#,###%', gridlines: {count:3}}, 
+          legend:'right',colors: ["red","blue", "purple"]}
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    Insert title (or delete and embed chart as an <a href="http://www.w3schools.com/tags/tag_iframe.asp" target="_blank">iframe</a> in another web page)
+      <!-- This div will hold the chart. Modify your own text and links -->
+    <div id="chart" style="height: 600px; width: 600px;"></div>
+    Data source: (insert, with optional <a href="https://docs.google.com/spreadsheet/ccc?key=0AtmGKybdRLlZdHBvSGxIdEJoc1YxNUxtTThGbU9Qcnc" target="_blank">link to Google Sheet</a></br>
+    Chart created with Google Visualization API, with guide at</br><a href="https://github.com/JackDougherty/gviz-scatter-series" target="_blank">https://github.com/JackDougherty/gviz-scatter-series</a>
+  </body>
+</html>
