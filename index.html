@@ -12,7 +12,7 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript">
       // Load the Google Visualization API and chart package
       google.load('visualization', '1', {packages: ['corechart']});
@@ -29,17 +29,17 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
       // In your Google Sheet, File > Publish to the Web
       var query = new google.visualization.Query(
           'http://spreadsheets.google.com/tq?key=0AtmGKybdRLlZdHBvSGxIdEJoc1YxNUxtTThGbU9Qcnc&range=A1:G7&pub=1');
-    
+
       // Send the query with a callback function.
       query.send(handleQueryResponse);
     }
-    
+
     function handleQueryResponse(response) {
       if (response.isError()) {
         alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
         return;
       }
-      // Set data series (3 in this sample) to match your Google Sheet. 
+      // Set data series (3 in this sample) to match your Google Sheet.
       // Set property for each tooltip column in your GoogleSheet (first = 0)
       var data = response.getDataTable();
       data.setColumnProperty(2, 'role', 'tooltip');
@@ -47,14 +47,14 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
       data.setColumnProperty(6, 'role', 'tooltip');
       chart = new google.visualization.ScatterChart(document.getElementById('chart'));
       // Insert titles, labels, font sizes, and legend/data series colors below.
-      // If Google Sheet data is not in decimal or percent format (between 0 and 1), reset maxValue and remove format. 
+      // If Google Sheet data is not in decimal or percent format (between 0 and 1), reset maxValue and remove format.
       // Modify legend labels via Y-series column headers in Google Sheet.
-      // See more ScatterChart options at 
+      // See more ScatterChart options at
       // https://developers.google.com/chart/interactive/docs/gallery/scatterchart
-      var options = {title: 'click points or float over cursor to view data labels', 
+      var options = {title: 'click points or float over cursor to view data labels',
           titleTextStyle: {fontSize: 14, italic: true},
           vAxis: {title: "Insert Y-axis label", titleTextStyle: {fontSize: 14}, minValue: 0, maxValue: 1, format:'#,###%', gridlines: {count:3}},
-          hAxis: {title: "Insert X-axis label", titleTextStyle: {fontSize: 14}, minValue: 0, maxValue: 1, format:'#,###%', gridlines: {count:3}}, 
+          hAxis: {title: "Insert X-axis label", titleTextStyle: {fontSize: 14}, minValue: 0, maxValue: 1, format:'#,###%', gridlines: {count:3}},
           legend:'right',colors: ["red","blue", "purple"]}
       chart.draw(data, options);
     }
