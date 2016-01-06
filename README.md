@@ -3,12 +3,9 @@ otl-scatterchart
 
 Use this template to create a custom interactive scatter chart (to visualize relationship between X-Y data), which draws data from a Google Sheet, with options for multiple data series/legend and data labels in the text tooltip pop-up. Uses Google Visualization API.
 
-## Demos
-http://jackdougherty.github.io/otl-scatterchart/index.html
+## Demo
 
 http://jackdougherty.github.io/otl-scatterchart/income-test.html
-
-http://jackdougherty.github.io/otl-scatterchart/ctvoices-race-freelunch.html
 
 ## Requirements:
 
