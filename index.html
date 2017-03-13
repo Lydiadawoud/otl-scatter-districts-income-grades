@@ -27,11 +27,11 @@
         },
 
         title: {
-          text: 'Income and Test Levels in Connecticut School Districts, 2009-13'  // EDIT to insert your chart title
+          text: 'Income and Test Scores in Connecticut School Districts, 2009-13'  // EDIT to insert your chart title
         },
 
         subtitle: {
-          text: 'View <a href="http://jackdougherty.github.io/otl-scatter-district-income-grades">source data</a> from TrendCT, NY Times, Stanford, ACS 2009-13',
+          text: 'View <a href="http://github.com/jackdougherty/otl-scatter-district-income-grades">source data</a> from TrendCT, NY Times, Stanford Ed Data Archive, American Community Survey',
           useHTML: true
         },
 
@@ -58,7 +58,7 @@
 
         yAxis: {
           title: {
-            text: 'Grade levels above/below average'   // EDIT to insert vertical y-axis label
+            text: 'Grade levels above/below average on 6th grade tests'   // EDIT to insert vertical y-axis label
           }
         },
 
@@ -82,7 +82,7 @@
               point = this.point;
               // EDIT tooltip text labels below
               html = '<table>';
-              html += '<tr><th colspan="2"><h4>' + point.name + '</h4></th></tr>';
+              html += '<tr><th colspan="2"><h3>District:' + point.name + '</h3></th></tr>';
               html += '<tr><th>Median household income:</th><td>$' + comma(point.x) + '</td></tr>';
               html += '<tr><th>Grade levels above/below average:</th><td>' + point.y + '</td></tr>';
               html += '</table>';
