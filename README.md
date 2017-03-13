@@ -1,34 +1,37 @@
-otl-scatterchart
+otl-scatter-district-income-grades
 ===================
+CT school district income and grade levels 2009-13 in Highcharts scatter chart
 
-Use this template to create a custom interactive scatter chart (to visualize relationship between X-Y data), which draws data from a Google Sheet, with options for multiple data series/legend and data labels in the text tooltip pop-up. Uses Google Visualization API.
+## live link
+https://jackdougherty.github.io/otl-scatter-district-income-grades/index.html
 
-## Demo
+## created for OnTheLine book
+- http://ontheline.trincoll.edu
 
-http://jackdougherty.github.io/otl-scatterchart/income-test.html
+## license
+http://www.highcharts.com is free for personal websites, school sites, or non-profit organizations. Commercial use requires the purchase of a license.
 
-## Requirements:
+## credits
+- Thanks @ilyankou for seriesMapping data, tooltips, and improving overall code
+- Thanks @andrewbtran at http://TrendCT.org for function to display financial data (with $ and commas)
 
-- a free Google Drive account
-- skills to modify spreadsheet and HTML templates as instructed
-- a way to host the index.html file on the web (such as free GitHub Pages account, or Google Drive host folder)
-and ability to modify spreadsheet and HTML templates as instructed.
+## learn more at DataVizForAll.org
+- Tutorial: Modify and Host a Highcharts Scatter Chart Template on GitHub, https://www.datavizforall.org/github/fork-highcharts
+- More Highcharts Templates, https://www.datavizforall.org/Highcharts
 
-Learn more at Data Visualization book-in-progress at http://DataVizBook.org
+## data
+- Sources: Stanford Education Data Archives, TrendCT, ACS 2009-13			
+- Andrew Ba Tran, “Wealth and Grades: Compare Connecticut’s School Districts,” TrendCT, May 6, 2016, http://trendct.org/2016/05/06/wealth-and-grades-compare-connecticuts-school-districts/.			
+- TrendCT data repository, https://github.com/trendct-data/stanford-cepa			
+- based on Motoko Rich, Amanda Cox, and Matthew Bloch, “Money, Race and Success: How Your School District Compares,” The New York Times, April 29, 2016, http://www.nytimes.com/interactive/2016/04/29/upshot/money-race-and-success-how-your-school-district-compares.html		
+- based on Sean F. Reardon, Demetra Kalogrides, Andrew Ho, Ben Shear, Kenneth Shores, Erin Fahle. (2016). Stanford Education Data Archive, (Version 1.1 File Title), http://purl.stanford.edu/db586ns4974
+- Median Household Income, Table 57, American Community Survey 2009-13, from Social Explorer, http://www.socialexplorer.com/tables/ACS2013_5yr
 
-Quick notes on creating your own version:
-
-1) Go to the <a href="https://docs.google.com/spreadsheet/ccc?key=0AtmGKybdRLlZdHBvSGxIdEJoc1YxNUxtTThGbU9Qcnc&usp=sharing">Google Sheet sample data template</a> and File > Make Copy to save in your own Google Drive, modify as instructed, and publish to the web.
-
-2) Download a copy of the index.HTML template file, edit as instructed in the code comments, and host on the live web.
-
-Two options to edit and host file on the live web:
-- If you have a free GitHub account, you can "fork" (aka copy) my repository to your account, delete my "gh-pages" branch,  create your own "gh-pages" branch, and edit the index.html file to host on the web.
-- Or learn how to freely <a href="https://googledrive.com/host/0B716ywBKT84AMXBENXlnYmJISlE/GoogleDriveHosting.html">host webpages on Google Drive</a>. Click this GitHub repository "download" button to obtain a zip file of the index.html page and upload to your Google Drive public host folder (or copy and paste its contents into your own index.html file). Edit as instructed in the code comments and make public on the live web.  
-
-Learn more about Visualizations at Google Code Playground
-https://code.google.com/apis/ajax/playground/
-and
-Google Visualization Scatter Chart configuration page https://developers.google.com/chart/interactive/docs/gallery/scatterchart
-
-Credit to https://github.com/erose for helping me to figure this out.
+## definitions
+- grade levels SEDA = average of 6th grade English and Math scores on CT tests, linked to NAEP test scores, and expressed as "grade level equivalents" (above or below national average), from TrendCT data repository, based on New York Times analysis of Stanford Education Data Archive data			
+- median household income (MedHIncACS200913) = American Community Survey 2009-13, used here instead of SEDA median family income calculation below. For CT regional school districts, which are comprised of two or more rural towns, I calculated the average of median household incomes for all towns, with no weighting for student enrollment
+- median family income calculation by SEDA, labeled inc50all = income at 50th percentile (all)	SDDS/ACS	percentiles computed by interpolating over counts of people in each of 16 income categories. But I did not use this because it was not equivalent to ACS 2009-13 town-level median family income or median household income, or any other easy-to-replicate measure in ACS 		
+- Correlation coefficients (between various income measures and SEDA grade levels)
+  - MedHIncACS200913 = 0.777967328 = used in this analysis, although other values are higher
+  - MedFIncACS200913 = 0.947981875
+	- median family income SEDA = 0.799337334
