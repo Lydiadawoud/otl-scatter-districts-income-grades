@@ -1,9 +1,9 @@
-otl-scatter-district-income-grades
+otl-scatter-districts-income-grades
 ===================
-CT school district income and grade levels 2009-13 in Highcharts scatter chart
+CT school districts by income and grade levels 2009-13 in Highcharts scatter chart
 
 ## live link
-https://jackdougherty.github.io/otl-scatter-district-income-grades/index.html
+https://jackdougherty.github.io/otl-scatter-districts-income-grades/index.html
 
 ## created for OnTheLine book
 - http://ontheline.trincoll.edu
@@ -20,12 +20,13 @@ http://www.highcharts.com is free for personal websites, school sites, or non-pr
 - More Highcharts Templates, https://www.datavizforall.org/Highcharts
 
 ## data
-- Sources: Stanford Education Data Archives, TrendCT, ACS 2009-13			
-- Andrew Ba Tran, “Wealth and Grades: Compare Connecticut’s School Districts,” TrendCT, May 6, 2016, http://trendct.org/2016/05/06/wealth-and-grades-compare-connecticuts-school-districts/.			
-- TrendCT data repository, https://github.com/trendct-data/stanford-cepa			
-- based on Motoko Rich, Amanda Cox, and Matthew Bloch, “Money, Race and Success: How Your School District Compares,” The New York Times, April 29, 2016, http://www.nytimes.com/interactive/2016/04/29/upshot/money-race-and-success-how-your-school-district-compares.html		
-- based on Sean F. Reardon, Demetra Kalogrides, Andrew Ho, Ben Shear, Kenneth Shores, Erin Fahle. (2016). Stanford Education Data Archive, (Version 1.1 File Title), http://purl.stanford.edu/db586ns4974
+- Sources: Stanford Education Data Archives, NY Times, TrendCT, American Community Survey 2009-13
+- prepared by Jack Dougherty, Trinity College in https://github.com/jackdougherty/otl-scatter-districts-income-grades/ct-districts-income-grades-2009-13.xlsx
+- from:
 - Median Household Income, Table 57, American Community Survey 2009-13, from Social Explorer, http://www.socialexplorer.com/tables/ACS2013_5yr
+- Andrew Ba Tran, “Wealth and Grades: Compare Connecticut’s School Districts,” TrendCT, May 6, 2016, http://trendct.org/2016/05/06/wealth-and-grades-compare-connecticuts-school-districts/, see TrendCT data repository, https://github.com/trendct-data/stanford-cepa		
+- based on Motoko Rich, Amanda Cox, and Matthew Bloch, “Money, Race and Success: How Your School District Compares,” The New York Times, April 29, 2016, http://www.nytimes.com/interactive/2016/04/29/upshot/money-race-and-success-how-your-school-district-compares.html	
+- based on Sean F. Reardon, Demetra Kalogrides, Andrew Ho, Ben Shear, Kenneth Shores, Erin Fahle. (2016). Stanford Education Data Archive, (Version 1.1 File Title), http://purl.stanford.edu/db586ns4974
 
 ## definitions
 - grade levels SEDA = average of 6th grade English and Math scores on CT tests, linked to NAEP test scores, and expressed as "grade level equivalents" (above or below national average), from TrendCT data repository, based on New York Times analysis of Stanford Education Data Archive data			
